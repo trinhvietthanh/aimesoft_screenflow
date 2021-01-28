@@ -16,7 +16,7 @@ import pytz
 def datetimefilter(value, format='%H:%M:%S'):
     tz = pytz.timezone('Asia/Ho_Chi_Minh')  # timezone you want to convert to from UTC (America/Los_Angeles)
     utc = pytz.timezone('UTC')
-    value = utc.localize(value, is_dst=None).astimezone(pytz.utc)
+    value = utc.localize(value).astimezone(pytz.utc)
     local_dt = value.astimezone(tz)
     return local_dt.strftime(format)
 
