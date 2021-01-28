@@ -1,5 +1,4 @@
-import React from "react";
-import { BrowserRouter as Link } from "react-router-dom";
+import React, { useState } from "react";
 import { Form, Input, Button, Checkbox, Row, Card } from "antd";
 import axios from "axios";
 
@@ -19,22 +18,28 @@ const tailLayout = {
 };
 
 export default function Login() {
+  const [error, SetError] = useState("");
   const onFinish = (values) => {
     axios({
       method: "post",
       url: "/api/auth/login",
       data: values,
-    }).then(function (response) {
-      localStorage.setItem("access_token", response.data);
-      if (
-        localStorage.getItem("access_token") !== null &&
-        localStorage.getItem("access_token") !== "undefined"
-      ) {
-        window.location.replace("/");
-      } else {
-        alert(response.error);
-      }
-    });
+    })
+      .then(function (response) {
+        localStorage.setItem("access_token", response.data);
+        if (
+          localStorage.getItem("access_token") !== null &&
+          localStorage.getItem("access_token") !== "undefined"
+        ) {
+          window.location.replace("/");
+        } else {
+          SetError(response.error);
+        }
+      })
+      .catch((err) => {
+        SetError(err.error);
+        alert(err.error);
+      });
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -55,6 +60,7 @@ export default function Login() {
           src="https://www.aimesoft.com/assets/aimesoft/images/logo.png"
           style={{ width: 250 }}
         ></img>
+        {error && <div className={"error-text"}>{error}</div>}
         <Form
           {...layout}
           name="basic"
@@ -98,7 +104,6 @@ export default function Login() {
             <Button type="primary" htmlType="submit">
               Đăng nhập
             </Button>
-           
           </Form.Item>
         </Form>
       </Card>

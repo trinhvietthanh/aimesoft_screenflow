@@ -51,22 +51,29 @@ def ListTimes(times, month, year):
                             checkIn = (obj['checkIn']).split(":")
                         else:
                             checkIn = (time_start_am).split(":")
-                        lunch = (time_end_am).split(":")
-                        if(time_end_pm > obj['checkOut']):
-                            checkOut = (obj['checkOut']).split(":")
+                        if(checkOut > time_end_am):
+                            lunch = (time_end_am).split(":")
+                            if(time_end_pm > obj['checkOut']):
+                                checkOut = (obj['checkOut']).split(":")
+                            else:
+                                checkOut = (time_end_pm).split(":")
+                            endlunch = (time_start_pm).split(":")
+                            t1 = timedelta(
+                                hours=int(checkIn[0]), minutes=int(checkIn[1]))
+                            t2 = timedelta(
+                                hours=int(lunch[0]), minutes=int(lunch[1]))
+                            t3 = timedelta(
+                                hours=int(endlunch[0]), minutes=int(endlunch[1]))
+                            t4 = timedelta(
+                                hours=int(checkOut[0]), minutes=int(checkOut[1]))
+                            obj['total'] = str(t2-t1 + t4-t3)
                         else:
-                            checkOut = (time_end_pm).split(":")
-                        endlunch = (time_start_pm).split(":")
-                        t1 = timedelta(
-                            hours=int(checkIn[0]), minutes=int(checkIn[1]))
-                        t2 = timedelta(
-                            hours=int(lunch[0]), minutes=int(lunch[1]))
-                        t3 = timedelta(
-                            hours=int(endlunch[0]), minutes=int(endlunch[1]))
-                        t4 = timedelta(
-                            hours=int(checkOut[0]), minutes=int(checkOut[1]))
-                        obj['total'] = str(t2-t1 + t4-t3)
-
+                            checkOut = (obj['checkOut']).split(":")
+                            t1 = timedelta(
+                                hours=int(checkIn[0]), minutes=int(checkIn[1]))
+                            t2 = timedelta(
+                                hours=int(checkOut[0]), minutes=int(checkOut[1]))
+                            obj['total'] = str(t2-t1)
                         list_time.append(copy.copy(obj))
                     obj = {'id': "", 'checkIn': "", 'checkOut': ""}
                     obj["id"] = date
@@ -81,27 +88,38 @@ def ListTimes(times, month, year):
                 checkIn = (obj['checkIn']).split(":")
             else:
                 checkIn = (time_start_am).split(":")
-            # Time to Lunch
-            lunch = (time_end_am).split(":")
-            endlunch = (time_start_pm).split(":")
-            #
-            if(time_end_pm > obj['checkOut']):
-                checkOut = (obj['checkOut']).split(":")
+            if(obj['checkOut'] > time_end_am):
+                # Time to Lunch
+                lunch = (time_end_am).split(":")
+                endlunch = (time_start_pm).split(":")
+                #
+                if(time_end_pm > obj['checkOut']):
+                    checkOut = (obj['checkOut']).split(":")
+                else:
+                    checkOut = (time_end_pm).split(":")
+                if(checkIn and not checkOut and month == time['time'].strftime("%#m")
+                and year == time['time'].strftime("%Y")):
+                    t1 = timedelta(hours=int(checkIn[0]), minutes=int(checkIn[1]))
+                    t2 = timedelta(hours=int(lunch[0]), minutes=int(lunch[1]))
+                    t3 = timedelta(
+                        hours=int(endlunch[0]), minutes=int(endlunch[1]))
+                    t4 = timedelta(
+                        hours=int(checkOut[0]), minutes=int(checkOut[1]))
+                    obj['total'] = str(t2-t1 + t4-t3)
+                    if (obj['total'] < "0:00:00"):
+                        obj['total'] = "0:00:00"
+                    list_time.append(obj)
             else:
-                checkOut = (time_end_pm).split(":")
-
-            if(checkIn != '' and checkOut != '' and month == time['time'].strftime("%#m")
-               and year == time['time'].strftime("%Y")):
-                t1 = timedelta(hours=int(checkIn[0]), minutes=int(checkIn[1]))
-                t2 = timedelta(hours=int(lunch[0]), minutes=int(lunch[1]))
-                t3 = timedelta(
-                    hours=int(endlunch[0]), minutes=int(endlunch[1]))
-                t4 = timedelta(
-                    hours=int(checkOut[0]), minutes=int(checkOut[1]))
-                obj['total'] = str(t2-t1 + t4-t3)
-                if (obj['total'] < "0:00:00"):
-                    obj['total'] = "0:00:00"
-                list_time.append(obj)
+                
+                if(checkIn and checkOut and month == time['time'].strftime("%#m")
+                and year == time['time'].strftime("%Y")):
+                    checkOut = (obj['checkOut']).split(":")
+                    t1 = timedelta(hours=int(checkIn[0]), minutes=int(checkIn[1]))
+                    t2 = timedelta(hours=int(checkOut[0]), minutes=int(checkOut[1]))
+                    obj['total'] = str(t2-t1)
+                    if (obj['total'] < "0:00:00"):
+                        obj['total'] = "0:00:00"
+                    list_time.append(obj)
         return list_time
     else:
         return None

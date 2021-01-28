@@ -17,10 +17,12 @@ class SignupApi(Resource):
 class LoginApi(Resource):
     def post(self):
         body = request.get_json()
-        user = Users.objects.get(email=body.get('email'))
-        authorized = user.check_password(body.get('password'))
+        try:
+            user = Users.objects.get(email=body.get('email'))
+            authorized = user.check_password(body.get('password'))
+        except:
+            return {'error': 'Email or password invalid'}, 401
         if not authorized:
             return {'error': 'Email or password invalid'}, 401
-        expires = datetime.timedelta(days=7)
-        access_token = create_access_token(identity=str(user.id), expires_delta=expires)
+        access_token = create_access_token(identity=str(user.id))
         return {'token': access_token}, 200

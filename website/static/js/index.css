@@ -19,3 +19,6 @@ button.ant-btn.export {
   background-color: #7cb305;
   margin-bottom: 10px;
 }
+.error-text{
+  color: #f5222d;
+}
