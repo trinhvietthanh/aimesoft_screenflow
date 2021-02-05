@@ -1,15 +1,38 @@
-version: '3.8'
+version: "3.8"
 services:
-  backend:
+  screen_flow:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: aimesoft
     ports:
       - "5000:5000"
     volumes:
       - .:/app
+    networks:
+      - web
     
+  db:
+    image: mongo:latest
+    hostname: db
+    environment:
+      - MONGO_INITDB_DATABASE=aimesoft
+    volumes:
+      - .:/var/lib/mongo
+    
+    ports:
+      - 27017:27017
+    networks:
+      - web
+  mongo_seed:
+    image: mongo:latest
+    volumes:
+      - ./database:/database
+    command:
+      /database/import.sh
+    networks:
+      - web
+networks:
+  web: 
 
 
 

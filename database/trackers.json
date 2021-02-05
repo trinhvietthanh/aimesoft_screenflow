@@ -1,0 +1,253 @@
+[{
+  "_id": {
+    "$oid": "5ffbcfb2a6e5baab792a3f6f"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-02-5T04:10:26.187Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffbcfc8a6e5baab792a3f71"
+  },
+  "user": {
+    "$oid": "5ffbcfc7a6e5baab792a3f70"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-01-11T04:10:48.381Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffbcfeba6e5baab792a3f72"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-01-11T04:11:23.704Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffbd0f7a6e5baab792a3f73"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-01-11T04:15:51.504Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffbd101a6e5baab792a3f75"
+  },
+  "user": {
+    "$oid": "5ffbd101a6e5baab792a3f74"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-01-11T04:16:01.686Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffbd14da6e5baab792a3f76"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkOut",
+  "time": {
+    "$date": "2021-02-05T04:17:17.214Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffbd4cfa6e5baab792a3f77"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkOut",
+  "time": {
+    "$date": "2021-01-11T04:32:15.171Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffbd764a6e5baab792a3f78"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-01-11T04:43:16.029Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffbd776a6e5baab792a3f79"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-01-11T04:43:34.581Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffbd7a9a6e5baab792a3f7a"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-01-11T04:44:25.270Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffbd7e1a6e5baab792a3f7b"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-01-11T04:45:21.267Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffbda1ca6e5baab792a3f7c"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-01-11T04:54:52.340Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffbdaafa6e5baab792a3f7d"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-01-11T04:57:19.397Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffbdc12a6e5baab792a3f7e"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-01-11T05:03:14.774Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffc01a2a6e5baab792a3f7f"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-01-11T07:43:30.613Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffc01a7a6e5baab792a3f80"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkOut",
+  "time": {
+    "$date": "2021-01-11T07:43:35.623Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f908d2a6d8960a1ca3ac9"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-01-26T01:46:21.518Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f90932a6d8960a1ca3aca"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-01-26T03:46:27.776Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f909a2a6d8960a1ca3acb"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkOut",
+  "time": {
+    "$date": "2021-01-26T03:46:34.719Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f90a12a6d8960a1ca3ace"
+  },
+  "user": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-01-26T03:46:41.508Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600f91422a6d8960a1ca3acf"
+  },
+  "user": {
+    "$oid": "600556fbe918d88e2e7a4ea0"
+  },
+  "type": "checkIn",
+  "time": {
+    "$date": "2021-01-26T03:49:22.374Z"
+  },
+  "__v": 0
+}]

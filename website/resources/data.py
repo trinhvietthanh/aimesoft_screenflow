@@ -7,7 +7,6 @@ from website import app
 import copy
 import re
 from datetime import timedelta, datetime
-import flask_excel as excel
 from bson.objectid import ObjectId
 import pytz
 # Detail time of Employee

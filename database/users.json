@@ -1,0 +1,83 @@
+[{
+  "_id": {
+    "$oid": "5ffbcfb1a6e5baab792a3f6e"
+  },
+  "voiceId": null,
+  "hasUserRegisteredForVoice": false,
+  "hasUserRegisteredForFace": true,
+  "dob": null,
+  "email": null,
+  "affiliation": null,
+  "faceId": "Tuấn Anh Nguyễn",
+  "firstName": "Tuấn",
+  "lastName": "Anh Nguyễn",
+  "displayName": "Tuấn Anh Nguyễn",
+  "createdAt": {
+    "$date": "2021-01-11T04:10:25.399Z"
+  },
+  "updatedAt": {
+    "$date": "2021-01-11T04:10:25.399Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffbcfc7a6e5baab792a3f70"
+  },
+  "voiceId": null,
+  "hasUserRegisteredForVoice": false,
+  "hasUserRegisteredForFace": true,
+  "dob": null,
+  "email": null,
+  "affiliation": null,
+  "faceId": "Thanh Hòa",
+  "firstName": "Thanh",
+  "lastName": "Hòa",
+  "displayName": "Thanh Hòa",
+  "createdAt": {
+    "$date": "2021-01-11T04:10:47.846Z"
+  },
+  "updatedAt": {
+    "$date": "2021-01-11T04:10:47.846Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffbd101a6e5baab792a3f74"
+  },
+  "voiceId": null,
+  "hasUserRegisteredForVoice": false,
+  "hasUserRegisteredForFace": true,
+  "dob": null,
+  "email": null,
+  "affiliation": null,
+  "faceId": "huy phạm",
+  "firstName": "huy",
+  "lastName": "phạm",
+  "displayName": "huy phạm",
+  "createdAt": {
+    "$date": "2021-01-11T04:16:01.600Z"
+  },
+  "updatedAt": {
+    "$date": "2021-01-11T04:16:01.600Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ffe56ddc05570691c0c65ba"
+  },
+  "voiceId": "admin",
+  "faceId": "admin",
+  "hasUserRegisteredForVoice": false,
+  "hasUserRegisteredForFace": true,
+  "firstName": "admin",
+  "lastName": "admin",
+  "displayName": "admin",
+  "email": "admin@gmail.com",
+  "password": "$2b$12$gE6o722hseK.f73xUbCe7uVWd0X1jcrtP8T2LO7QTjLYN9ZCDrCr.",
+  "createdAt": {
+    "$date": "2021-01-13T02:11:40.343Z"
+  },
+  "updatedAt": {
+    "$date": "2021-01-13T02:11:40.343Z"
+  }
+}]
