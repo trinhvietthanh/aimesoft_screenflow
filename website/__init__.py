@@ -6,15 +6,14 @@ from flask_bcrypt import Bcrypt
 from flask_restful import Api
 from flask_jwt_extended import JWTManager
 
-
 app = Flask(__name__)
-app.config['MONGODB_SETTINGS'] = {
-    'db': 'aimesoft',
-    'host': '192.168.1.69',
-    'port': 27017
 
-}
 app.config.from_envvar('ENV_FILE_LOCATION')
+app.config['MONGODB_SETTINGS'] = {
+        'db': 'aimesoft',
+        'host': 'db',
+        'port': 27017
+}
 jwt = JWTManager(app)
 bcrypt = Bcrypt(app)
 api = Api(app)
