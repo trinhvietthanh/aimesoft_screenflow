@@ -20,7 +20,7 @@ services:
       - .:/var/lib/mongo
     
     ports:
-      - 27017:27017
+      - "27017:27017"
     networks:
       - web
   mongo_seed:
