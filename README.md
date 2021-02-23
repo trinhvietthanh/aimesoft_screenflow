@@ -11,15 +11,7 @@ Install Python modules
 Install React modules
   
     yarn install --production
-
-Run the application using
-   In mac/linux can run the command:
-        
-        export ENV_FILE_LOCATION=./.env
-    
-   and windows user can run the command:
-        
-        set ENV_FILE_LOCATION=./.env
+Run app
         
     python main.py
 You will get below REST API
