@@ -6,33 +6,46 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
+    environment:
+      APP_DEBUG: "False"
+      APP_PORT: 5000
+      MONGODB_DATABASE: aimesoft
+      MONGODB_USERNAME: "root"
+      MONGODB_PASSWORD: ""
+      MONGODB_HOSTNAME: "192.168.1.76"
     volumes:
       - .:/app
+    depends_on:
+      - db
     networks:
       - web
     
   db:
     image: mongo:latest
-    hostname: db
+    # hostname: db
     environment:
-      - MONGO_INITDB_DATABASE=aimesoft
+      MONGO_INITDB_DATABASE: aimesoft
+      MONGODB_DATA_DIR: /data/db
+      MONDODB_LOG_DIR: /dev/null
     volumes:
-      - .:/var/lib/mongo
-    
+      - data:/data/db
     ports:
       - "27017:27017"
     networks:
       - web
-  mongo_seed:
-    image: mongo:latest
-    volumes:
-      - ./database:/database
-    command:
-      /database/import.sh
-    networks:
-      - web
+  # mongo_seed:
+  #   image: mongo:latest
+  #   volumes:
+  #     - ./database:/database
+  #   command:
+  #     /database/import.sh
+  #   networks:
+  #     - web
 networks:
   web: 
 
+volumes:
+  data:
+    driver: local
 
 
